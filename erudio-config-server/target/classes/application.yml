@@ -1,0 +1,12 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: erudio-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ingridportilho23/config-server-ms-kotlin.git
+          search-paths:
+          - 'greeting-service*'
