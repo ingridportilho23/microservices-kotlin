@@ -22,4 +22,4 @@ spring:
        dialect: org.hibernate.dialect.MySQLDialect
 logging:
   level:
-    '[org.apache.zookeeper.ClientCnx]': WARN
+    '[org.apache.zookeeper.ClientCnxn]': WARN

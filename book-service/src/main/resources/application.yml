@@ -1,5 +1,23 @@
 server:
   port: 8100
+resilience4j:
+  #retry:
+    #instances:
+      #foo-bar:
+        #maxAttempts: 5
+        #waitDuration: 1s
+        #enableExponentialBackoff: true
+  #ratelimiter:
+    #instances:
+      #default:
+        #limitForPeriod: 2
+        #limitRefreshPeriod: 10s
+  bulkhead:
+    instances:
+      default:
+        maxConcurrentCalls: 10
+      foo-bar:
+        maxConcurrentCalls: 10
 spring:
   application:
     name: book-service
@@ -22,4 +40,5 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
 logging:
   level:
-    '[org.apache.zookeeper.ClientCnx]': WARN
+    '[org.apache.zookeeper.ClientCnxn]': WARN
+
